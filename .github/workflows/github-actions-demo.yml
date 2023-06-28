@@ -29,12 +29,12 @@ jobs:
           tree
 
     
-      Test:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch'
-    needs: Build
-    environment: Test
-    steps:
+  Test:
+      runs-on: ubuntu-latest
+      if: github.event_name == 'workflow_dispatch'
+      needs: Build
+      environment: Test
+      steps:
       - run: echo "🧪 Testing..."
 
   Load-Test:
